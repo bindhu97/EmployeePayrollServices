@@ -59,4 +59,16 @@ update EmployeePayrollTable set PhoneNumber = 567891234, Address = 'Dharwad', De
 update EmployeePayrollTable set PhoneNumber = 678912345, Address = 'Tumkur', Department = 'Manager' WHERE Name = 'Austin'
 update EmployeePayrollTable set PhoneNumber = 789123456, Address = 'TamilNadu', Department = 'Analyst' WHERE Name = 'Richu'
 
+--UC9 Extend EmployeePayrollTable to more columns
+
+alter table EmployeePayrollTable add BasicPay bigint, Deductions bigint, TaxablePay bigint, IncomeTax bigint, NetPay bigint
+update EmployeePayrollTable set BasicPay = 10000, Deductions = 2000, TaxablePay = 1000, IncomeTax = 1000, NetPay = 25000 where Name = 'Alex'
+update EmployeePayrollTable set BasicPay = 10000, Deductions = 2000, TaxablePay = 1000, IncomeTax = 1500, NetPay = 30000 where Name = 'Sunil'
+update EmployeePayrollTable set BasicPay = 10000, Deductions = 2200, TaxablePay = 1000, IncomeTax = 1800, NetPay = 35000 where Name = 'Meena'
+update EmployeePayrollTable set BasicPay = 10000, Deductions = 2200, TaxablePay = 1500, IncomeTax = 1800, NetPay = 40000 where Name = 'Asha'
+update EmployeePayrollTable set BasicPay = 10000, Deductions = 3000, TaxablePay = 2000, IncomeTax = 2000, NetPay = 50000 where Name = 'Bill'
+update EmployeePayrollTable set BasicPay = 5000, Deductions = 500, TaxablePay = 300, IncomeTax = 250, NetPay = 10000 where Name = 'Austin'
+update EmployeePayrollTable set BasicPay = 10000, Deductions = 2000, TaxablePay = 1000, IncomeTax = 1800, NetPay = 34000 where Name = 'Richu'
+
+
 
