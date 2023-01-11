@@ -20,3 +20,9 @@ Insert into EmployeePayrollTable values ('Bill', 50000, '2018-01-01'), ('Austin'
 select * from EmployeePayrollTable where Name = 'Bill'
 select * from EmployeePayrollTable where Start between cast ('2018-01-01' as date) and Getdate()
 
+--UC6 Add Gender column and update gender in EmployeeRollTable
+
+alter table EmployeePayrollTable add Gender varchar(10) 
+update EmployeePayrollTable set Gender = 'M' where Name = 'Alex' or Name = 'Bill' or Name = 'Austin' or Name = 'Sunil'
+update EmployeePayrollTable set Gender = 'F' where Name = 'Meena' or Name = 'Asha' or Name = 'Richu'
+
