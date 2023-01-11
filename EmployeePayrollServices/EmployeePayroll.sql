@@ -48,3 +48,15 @@ select Count(Id) as Number_Of_Male_Employees from EmployeePayrollTable where Gen
 select Count(Id) as Number_Of_Female_Employees from EmployeePayrollTable where Gender = 'F' GROUP BY Gender
 select Count(Id) as Total_Employees from EmployeePayrollTable
 
+--UC8 Extend EmployeePayrollTable Personal Data
+
+alter table EmployeePayrollTable add PhoneNumber bigint,  Address varchar(100), Department varchar(50) not null default 'Test'
+update EmployeePayrollTable set PhoneNumber = 123456789, Address = 'Bangalore', Department = 'HR' WHERE Name = 'Alex'
+update EmployeePayrollTable set PhoneNumber = 234567891, Address = 'Mysore', Department = 'DEveloper' WHERE Name = 'Sunil'
+update EmployeePayrollTable set PhoneNumber = 345678912, Address = 'Mangalore', Department = 'IT' WHERE Name = 'Meena'
+update EmployeePayrollTable set PhoneNumber = 456789123, Address = 'Hubli', Department = 'DataBasing' WHERE Name = 'Asha'
+update EmployeePayrollTable set PhoneNumber = 567891234, Address = 'Dharwad', Department = 'Desiger' WHERE Name = 'Bill'
+update EmployeePayrollTable set PhoneNumber = 678912345, Address = 'Tumkur', Department = 'Manager' WHERE Name = 'Austin'
+update EmployeePayrollTable set PhoneNumber = 789123456, Address = 'TamilNadu', Department = 'Analyst' WHERE Name = 'Richu'
+
+
