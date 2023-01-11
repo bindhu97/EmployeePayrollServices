@@ -70,5 +70,8 @@ update EmployeePayrollTable set BasicPay = 10000, Deductions = 3000, TaxablePay 
 update EmployeePayrollTable set BasicPay = 5000, Deductions = 500, TaxablePay = 300, IncomeTax = 250, NetPay = 10000 where Name = 'Austin'
 update EmployeePayrollTable set BasicPay = 10000, Deductions = 2000, TaxablePay = 1000, IncomeTax = 1800, NetPay = 34000 where Name = 'Richu'
 
+--UC10 Make Richu as part of sales & Marketing
+
+update EmployeePayrollTable set Department = 'Sales & Marketing' WHERE Name = 'Richu'
 
 
