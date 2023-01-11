@@ -26,3 +26,25 @@ alter table EmployeePayrollTable add Gender varchar(10)
 update EmployeePayrollTable set Gender = 'M' where Name = 'Alex' or Name = 'Bill' or Name = 'Austin' or Name = 'Sunil'
 update EmployeePayrollTable set Gender = 'F' where Name = 'Meena' or Name = 'Asha' or Name = 'Richu'
 
+--UC7 Using Aggregate Function
+
+select Sum(Salary) as Total_Salary_Of_Male from EmployeePayrollTable where Gender = 'M' GROUP BY Gender
+select Sum(Salary) as Total_Salary_Of_Female from EmployeePayrollTable where Gender = 'F' GROUP BY Gender
+select Sum(Salary) as Total_Salary_Of_Employees from EmployeePayrollTable
+
+select Avg(Salary) as Average_Salary_Of_Male from EmployeePayrollTable where Gender = 'M' GROUP BY Gender
+select Avg(Salary) as Average_Salary_Of_Female from EmployeePayrollTable where Gender = 'F' GROUP BY Gender
+select Avg(Salary) as Average_Salary_Of_Employees from EmployeePayrollTable
+
+select Min(Salary) as Minimum_Salary_Of_Male from EmployeePayrollTable where Gender = 'M' GROUP BY Gender
+select Min(Salary) as Minimum_Salary_Of_Female from EmployeePayrollTable where Gender = 'F' GROUP BY Gender
+select Min(Salary) as Minimum_Salary_Of_Employee from EmployeePayrollTable
+
+select Max(Salary) as Maximum_Salary_Of_Male from EmployeePayrollTable where Gender = 'M' GROUP BY Gender
+select Max(Salary) as Maximum_Salary_Of_Female from EmployeePayrollTable where Gender = 'F' GROUP BY Gender
+select Max(Salary) as Maximum_Salary_Of_Employee from EmployeePayrollTable
+
+select Count(Id) as Number_Of_Male_Employees from EmployeePayrollTable where Gender = 'M' GROUP BY Gender
+select Count(Id) as Number_Of_Female_Employees from EmployeePayrollTable where Gender = 'F' GROUP BY Gender
+select Count(Id) as Total_Employees from EmployeePayrollTable
+
