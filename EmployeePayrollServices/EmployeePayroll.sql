@@ -1,5 +1,6 @@
 --UC1 Create Database
 Create Database EmployeePayroll;
+use EmployeePayroll;
 
 --UC2 Create table
 
@@ -72,6 +73,10 @@ update EmployeePayrollTable set BasicPay = 10000, Deductions = 2000, TaxablePay 
 
 --UC10 Make Richu as part of sales & Marketing
 
-update EmployeePayrollTable set Department = 'Sales & Marketing' WHERE Name = 'Richu'
+insert into EmployeePayrollTable (Department, Name) values ('Sales & Marketing', 'Richu')
+
+select * from EmployeePayrollTable where Name = 'Richu'
+
+
 
 
