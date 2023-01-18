@@ -109,6 +109,19 @@ select Count(Id) as Number_Of_Male_Employees from EmployeePayrollTable1 where Ge
 select Count(Id) as Number_Of_Female_Employees from EmployeePayrollTable1 where Gender = 'F' GROUP BY Gender
 select Count(Id) as Total_Employees from EmployeePayrollTable1
 
+--UC12 Ensure All Retrieve Queries
+
+alter table EmployeePayrollTable1 add Start date
+Insert into EmployeePayrollTable1 (EmpId, Department,DepartmentId,Name,Gender,Salary,Start) values ('4','Analyst',12348,'Amaira','F',24000,'2018-01-01'),('5','Testing',12349,'Justin','M',19000,'2020-03-03'),('6','HR',12350,'Salena','F',40000,'2019-05-05')
+delete from EmployeePayrollTable1 where ID = '10022'
+
+select * from EmployeePayrollTable1 where Name = 'Justin'
+select * from EmployeePayrollTable1 where Start between cast ('2018-01-01' as date) and Getdate()
+
+select * from EmployeePayrollTable1
+update EmployeePayrollTable1 set Start = '2017-08-09' where Name = 'Jimmy'
+update EmployeePayrollTable1 set Start = '2019-08-19' where Name = 'Satish'
+update EmployeePayrollTable1 set Start = '2017-10-09' where Name = 'Aurora'
 
 
 
