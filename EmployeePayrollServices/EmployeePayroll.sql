@@ -77,6 +77,38 @@ insert into EmployeePayrollTable (Department, Name) values ('Sales & Marketing',
 
 select * from EmployeePayrollTable where Name = 'Richu'
 
+--UC11 Implements the ER Diagram into payroll service DB
+
+create table EmployeePayrollTable1 (ID bigint Identity(1,1)Primary Key, EmpID bigint, Department varchar(45) NOT NULL, DepartmentId bigint, FOREIGN KEY (EmpID) REFERENCES EmployeePayrollTable(Id));
+insert into EmployeePayrollTable1 (EmpId, Department) values ('1', 'Finance'),('2', 'Sales'), ('3', 'Marketing')
+select * from EmployeePayrollTable1
+
+alter table EmployeePayrollTable1 add Name varchar(10), Gender varchar (1), Salary bigint
+delete from EmployeePayrollTable1 where ID = '9'
+update EmployeePayrollTable1 set Name = 'Jimmy', DepartmentId = 12345, Gender = 'M', Salary = 20000 where Department = 'Finance'
+update EmployeePayrollTable1 set Name = 'Satish', DepartmentId = 12346, Gender = 'M', Salary = 24000 where Department = 'Sales'
+update EmployeePayrollTable1 set Name = 'Aurora', DepartmentId = 12347, Gender = 'F', Salary = 35000 where Department = 'Marketing'
+
+select Sum(Salary) as Total_Salary_Of_Male from EmployeePayrollTable1 where Gender = 'M' GROUP BY Gender
+select Sum(Salary) as Total_Salary_Of_Female from EmployeePayrollTable1 where Gender = 'F' GROUP BY Gender
+select Sum(Salary) as Total_Salary_Of_Employees from EmployeePayrollTable1
+
+select Avg(Salary) as Average_Salary_Of_Male from EmployeePayrollTable1 where Gender = 'M' GROUP BY Gender
+select Avg(Salary) as Average_Salary_Of_Female from EmployeePayrollTable1 where Gender = 'F' GROUP BY Gender
+select Avg(Salary) as Average_Salary_Of_Employees from EmployeePayrollTable1
+
+select Min(Salary) as Minimum_Salary_Of_Male from EmployeePayrollTable1 where Gender = 'M' GROUP BY Gender
+select Min(Salary) as Minimum_Salary_Of_Female from EmployeePayrollTable1 where Gender = 'F' GROUP BY Gender
+select Min(Salary) as Minimum_Salary_Of_Employee from EmployeePayrollTable1
+
+select Max(Salary) as Maximum_Salary_Of_Male from EmployeePayrollTable1 where Gender = 'M' GROUP BY Gender
+select Max(Salary) as Maximum_Salary_Of_Female from EmployeePayrollTable1 where Gender = 'F' GROUP BY Gender
+select Max(Salary) as Maximum_Salary_Of_Employee from EmployeePayrollTable1
+
+select Count(Id) as Number_Of_Male_Employees from EmployeePayrollTable1 where Gender = 'M' GROUP BY Gender
+select Count(Id) as Number_Of_Female_Employees from EmployeePayrollTable1 where Gender = 'F' GROUP BY Gender
+select Count(Id) as Total_Employees from EmployeePayrollTable1
+
 
 
 
